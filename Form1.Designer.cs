@@ -43,6 +43,7 @@
             // 
             // menuStrip1
             // 
+            menuStrip1.BackColor = SystemColors.ActiveCaption;
             menuStrip1.ImageScalingSize = new Size(24, 24);
             menuStrip1.Items.AddRange(new ToolStripItem[] { MsControles, MsApplications, MsAide });
             menuStrip1.Location = new Point(0, 0);
@@ -63,12 +64,14 @@
             MiListe.Name = "MiListe";
             MiListe.Size = new Size(279, 34);
             MiListe.Text = "Liste";
+            MiListe.Click += MiListe_Click;
             // 
             // MiBarreProg
             // 
             MiBarreProg.Name = "MiBarreProg";
             MiBarreProg.Size = new Size(279, 34);
             MiBarreProg.Text = "Barre de progression";
+            MiBarreProg.Click += MiBarreProg_Click;
             // 
             // Separateur
             // 
@@ -92,8 +95,9 @@
             // MiEditeur
             // 
             MiEditeur.Name = "MiEditeur";
-            MiEditeur.Size = new Size(270, 34);
+            MiEditeur.Size = new Size(169, 34);
             MiEditeur.Text = "Editeur";
+            MiEditeur.Click += MiEditeur_Click;
             // 
             // MsAide
             // 
@@ -105,7 +109,7 @@
             // MiApropos
             // 
             MiApropos.Name = "MiApropos";
-            MiApropos.Size = new Size(270, 34);
+            MiApropos.Size = new Size(188, 34);
             MiApropos.Text = "A Propos";
             // 
             // Form1
@@ -117,6 +121,7 @@
             MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
