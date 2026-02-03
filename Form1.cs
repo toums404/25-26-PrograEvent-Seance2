@@ -30,5 +30,10 @@ namespace _25_26_PrograEvent_Seance2
         {
             AffichageEnConstruction(sender, e);
         }
+
+        private void MiQuitter_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

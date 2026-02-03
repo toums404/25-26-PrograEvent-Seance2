@@ -84,6 +84,7 @@
             MiQuitter.Name = "MiQuitter";
             MiQuitter.Size = new Size(279, 34);
             MiQuitter.Text = "Quitter";
+            MiQuitter.Click += MiQuitter_Click;
             // 
             // MsApplications
             // 
