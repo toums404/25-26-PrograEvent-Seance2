@@ -112,6 +112,7 @@
             MiApropos.Name = "MiApropos";
             MiApropos.Size = new Size(188, 34);
             MiApropos.Text = "A Propos";
+            MiApropos.Click += MiApropos_Click;
             // 
             // Form1
             // 
@@ -121,6 +122,7 @@
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
             menuStrip1.ResumeLayout(false);

@@ -16,8 +16,8 @@ namespace _25_26_PrograEvent_Seance2
                 MessageBox.Show("Le fichier de curseur personnalisé est introuvable. Le curseur par défaut sera utilisé.", "Fichier introuvable", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }*/
         }
-        
-        
+
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -46,6 +46,12 @@ namespace _25_26_PrograEvent_Seance2
         private void MiQuitter_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void MiApropos_Click(object sender, EventArgs e)
+        {
+            FenetreAPropos form2 = new FenetreAPropos();
+            form2.ShowDialog();
         }
     }
 }

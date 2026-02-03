@@ -104,6 +104,7 @@
             bOk.TabIndex = 5;
             bOk.Text = "OK";
             bOk.UseVisualStyleBackColor = false;
+            bOk.Click += bOk_Click;
             // 
             // panel1
             // 
@@ -113,6 +114,7 @@
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(pbLogo);
+            panel1.Cursor = Cursors.Cross;
             panel1.Location = new Point(44, 12);
             panel1.Name = "panel1";
             panel1.Size = new Size(701, 356);
