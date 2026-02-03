@@ -5,7 +5,19 @@ namespace _25_26_PrograEvent_Seance2
         public Form1()
         {
             InitializeComponent();
+            /*string cheminCur = Path.Combine(Application.StartupPath, "Ressources", "LogoTomCorp.cur");
+            if (File.Exists(cheminCur))
+            {
+                Cursor curseurPerso = new Cursor(cheminCur);
+                this.Cursor = curseurPerso;
+            }
+            else
+            {
+                MessageBox.Show("Le fichier de curseur personnalisé est introuvable. Le curseur par défaut sera utilisé.", "Fichier introuvable", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }*/
         }
+        
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
