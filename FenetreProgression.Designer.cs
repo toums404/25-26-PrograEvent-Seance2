@@ -30,6 +30,8 @@
         {
             components = new System.ComponentModel.Container();
             panel1 = new Panel();
+            bReprendre = new Button();
+            bPause = new Button();
             label2 = new Label();
             label1 = new Label();
             ProgBSecondaire = new ProgressBar();
@@ -40,14 +42,40 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(bReprendre);
+            panel1.Controls.Add(bPause);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(ProgBSecondaire);
             panel1.Controls.Add(ProgBPrincipale);
             panel1.Location = new Point(58, 50);
             panel1.Name = "panel1";
-            panel1.Size = new Size(267, 353);
+            panel1.Size = new Size(267, 432);
             panel1.TabIndex = 0;
+            // 
+            // bReprendre
+            // 
+            bReprendre.BackColor = Color.IndianRed;
+            bReprendre.Font = new Font("Sitka Banner", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            bReprendre.Location = new Point(40, 300);
+            bReprendre.Name = "bReprendre";
+            bReprendre.Size = new Size(190, 77);
+            bReprendre.TabIndex = 5;
+            bReprendre.Text = "Reprendre";
+            bReprendre.UseVisualStyleBackColor = false;
+            bReprendre.Click += bReprendre_Click;
+            // 
+            // bPause
+            // 
+            bPause.BackColor = Color.IndianRed;
+            bPause.Font = new Font("Sitka Banner", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            bPause.Location = new Point(40, 199);
+            bPause.Name = "bPause";
+            bPause.Size = new Size(190, 77);
+            bPause.TabIndex = 4;
+            bPause.Text = "Pause";
+            bPause.UseVisualStyleBackColor = false;
+            bPause.Click += bPause_Click;
             // 
             // label2
             // 
@@ -104,5 +132,7 @@
         private ProgressBar ProgBSecondaire;
         private System.Windows.Forms.Timer timer1;
         private Label label2;
+        private Button bPause;
+        private Button bReprendre;
     }
 }

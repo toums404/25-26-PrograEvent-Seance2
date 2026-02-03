@@ -35,7 +35,8 @@ namespace _25_26_PrograEvent_Seance2
 
         private void MiBarreProg_Click(object sender, EventArgs e)
         {
-            AffichageEnConstruction(sender, e);
+            FenetreProgression form3 = new FenetreProgression();
+            form3.ShowDialog();
         }
 
         private void MiEditeur_Click(object sender, EventArgs e)

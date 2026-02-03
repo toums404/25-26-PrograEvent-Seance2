@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace _25_26_PrograEvent_Seance2
+﻿namespace _25_26_PrograEvent_Seance2
 {
     public partial class FenetreProgression : Form
     {
@@ -47,5 +37,17 @@ namespace _25_26_PrograEvent_Seance2
                 this.Close();
             }
         }
+
+        private void bPause_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+        }
+
+        private void bReprendre_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        
     }
 }
