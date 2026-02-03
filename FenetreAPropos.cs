@@ -15,31 +15,7 @@ namespace _25_26_PrograEvent_Seance2
         public FenetreAPropos()
         {
             InitializeComponent();
-            /*string cheminCur = Path.Combine(Application.StartupPath,"Ressources", "LogoTomCorp.cur");
-            if (File.Exists(cheminCur))
-            {
-                
-                panel1.Cursor = new Cursor(cheminCur);
-            }
-            else
-            {
-                MessageBox.Show("Le fichier de curseur personnalisé est introuvable. Le curseur par défaut sera utilisé.", "Fichier introuvable", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }*/
-            /*string cheminCur = Path.Combine(Application.StartupPath, "Ressources", "LogoTomCorp.cur");
-
-            if (File.Exists(cheminCur))
-            {
-                panel1.Cursor = new Cursor(cheminCur);
-            }
-            else
-            {
-                MessageBox.Show(
-                    "Le fichier de curseur personnalisé est introuvable. Le curseur par défaut sera utilisé.",
-                    "Fichier introuvable",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                );
-            }*/
+            
         }
 
         private void FenetreAPropos_Load(object sender, EventArgs e)
