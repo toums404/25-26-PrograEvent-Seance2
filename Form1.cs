@@ -1,8 +1,8 @@
 namespace _25_26_PrograEvent_Seance2
 {
-    public partial class FenetrePrincipale : Form
+    public partial class Form1 : Form
     {
-        public FenetrePrincipale()
+        public Form1()
         {
             InitializeComponent();
         }
