@@ -32,15 +32,17 @@
             lNom = new Label();
             lQualite = new Label();
             gbDetail = new GroupBox();
+            cbQualite = new ComboBox();
+            tbNom = new TextBox();
             bConfirmer = new Button();
             bAnnuler = new Button();
             bOuvrir = new Button();
             bEnregistrer = new Button();
             bAjouter = new Button();
             bSupprimer = new Button();
-            tbNom = new TextBox();
-            cbQualite = new ComboBox();
             lbPersonne = new ListBox();
+            ofdOuvrir = new OpenFileDialog();
+            sfdEnregistrer = new SaveFileDialog();
             gbDetail.SuspendLayout();
             SuspendLayout();
             // 
@@ -86,6 +88,22 @@
             gbDetail.TabIndex = 3;
             gbDetail.TabStop = false;
             gbDetail.Text = "Détail de la personne ";
+            // 
+            // cbQualite
+            // 
+            cbQualite.FormattingEnabled = true;
+            cbQualite.Items.AddRange(new object[] { "Madame", "Mademoiselle", "Monsieur", "Mondamoiseau", "Indéfini " });
+            cbQualite.Location = new Point(27, 56);
+            cbQualite.Name = "cbQualite";
+            cbQualite.Size = new Size(258, 33);
+            cbQualite.TabIndex = 10;
+            // 
+            // tbNom
+            // 
+            tbNom.Location = new Point(27, 117);
+            tbNom.Name = "tbNom";
+            tbNom.Size = new Size(258, 31);
+            tbNom.TabIndex = 10;
             // 
             // bConfirmer
             // 
@@ -141,22 +159,6 @@
             bSupprimer.Text = "Supprimer";
             bSupprimer.UseVisualStyleBackColor = true;
             // 
-            // tbNom
-            // 
-            tbNom.Location = new Point(27, 117);
-            tbNom.Name = "tbNom";
-            tbNom.Size = new Size(258, 31);
-            tbNom.TabIndex = 10;
-            // 
-            // cbQualite
-            // 
-            cbQualite.FormattingEnabled = true;
-            cbQualite.Items.AddRange(new object[] { "Madame", "Mademoiselle", "Monsieur", "Mondamoiseau", "Indéfini " });
-            cbQualite.Location = new Point(27, 56);
-            cbQualite.Name = "cbQualite";
-            cbQualite.Size = new Size(258, 33);
-            cbQualite.TabIndex = 10;
-            // 
             // lbPersonne
             // 
             lbPersonne.FormattingEnabled = true;
@@ -165,6 +167,10 @@
             lbPersonne.Name = "lbPersonne";
             lbPersonne.Size = new Size(460, 129);
             lbPersonne.TabIndex = 10;
+            // 
+            // ofdOuvrir
+            // 
+            ofdOuvrir.FileName = "openFileDialog1";
             // 
             // EcranListe
             // 
@@ -203,5 +209,7 @@
         private ComboBox cbQualite;
         private TextBox tbNom;
         private ListBox lbPersonne;
+        private OpenFileDialog ofdOuvrir;
+        private SaveFileDialog sfdEnregistrer;
     }
 }
