@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace _25_26_PrograEvent_Seance2
 {
@@ -17,12 +18,22 @@ namespace _25_26_PrograEvent_Seance2
         {
             InitializeComponent();
         }
+        [DllImport("user32.dll", EntryPoint = "SendMessage")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        private const int smLire = 0x0199;
+        private const int smEcrire = 0x019A;
+
+        private string NomFichier = "";
+        private int IndexSelectionne = -1;
+        private int compteurEncodage = 1;
+        private List<int> encodages = new List<int>();
+
+
+
         private void EcranListe_Load(object sender, EventArgs e)
         {
             Activer(true);
         }
-        private string NomFichier = "";
-        private int IndexSelectionne = -1;
         private void Activer(bool etat)
         {
             lbPersonne.Enabled = etat;
@@ -52,7 +63,9 @@ namespace _25_26_PrograEvent_Seance2
         {
             if (lbPersonne.SelectedIndex >= 0)
             {
-                lbPersonne.Items.RemoveAt(lbPersonne.SelectedIndex);
+                int index = lbPersonne.SelectedIndex;
+                lbPersonne.Items.RemoveAt(index);
+                encodages.RemoveAt(index);
             }
         }
 
@@ -67,8 +80,13 @@ namespace _25_26_PrograEvent_Seance2
             else
             { 
                 lbPersonne.Items.Add(item);
+                encodages.Add(compteurEncodage);
+                // Stocker l'encodage via SendMessage (numéro de création)
+                SendMessage(lbPersonne.Handle, smEcrire, lbPersonne.Items.Count - 1, compteurEncodage);
+                compteurEncodage++;
             }
-                
+
+            TrierListe();
             Activer(true);
         }
 
@@ -78,10 +96,14 @@ namespace _25_26_PrograEvent_Seance2
             {
                 NomFichier = ofdOuvrir.FileName;
                 lbPersonne.Items.Clear();
+                encodages.Clear();
+                compteurEncodage = 1;
 
                 foreach (string ligne in File.ReadAllLines(NomFichier))
                 {
                     lbPersonne.Items.Add(ligne);
+                    encodages.Add(compteurEncodage);
+                    compteurEncodage++;
                 }
             }
         }
@@ -105,9 +127,13 @@ namespace _25_26_PrograEvent_Seance2
         {
             if (lbPersonne.SelectedIndex >= 0)
             {
+                //int encodage = SendMessage(lbPersonne.Handle, smLire, lbPersonne.SelectedIndex, 0);
+                int index = lbPersonne.SelectedIndex +1;
+                int encodage = encodages[lbPersonne.SelectedIndex];
                 MessageBox.Show(
-                    "Index :" + lbPersonne.SelectedIndex +
-                    "\nValeur :" + lbPersonne.SelectedItem.ToString()
+                    "Index :" + index +
+                    "\nValeur :" + lbPersonne.SelectedItem.ToString() +
+                    "\nEncodage :" + encodage
                     );
             }
         }
@@ -128,5 +154,27 @@ namespace _25_26_PrograEvent_Seance2
                 gbDetail.Enabled = true;
             }
         }
+        private void TrierListe() 
+        {
+            //var liste = lbPersonne.Items.Cast<string>().OrderBy(x => x).ToList();
+
+            //lbPersonne.Items.Clear();
+            //lbPersonne.Items.AddRange(liste.ToArray());
+            var combine = lbPersonne.Items.Cast<string>()
+        .Select((text, i) => new { Text = text, Enc = encodages[i] })
+        .OrderBy(x => x.Text)
+        .ToList();
+
+            lbPersonne.Items.Clear();
+            encodages.Clear();
+
+            foreach (var item in combine)
+            {
+                lbPersonne.Items.Add(item.Text);
+                encodages.Add(item.Enc); // garde l'encodage d'origine
+            }
+        }
+
     }
 }
+

@@ -1,8 +1,8 @@
 namespace _25_26_PrograEvent_Seance2
 {
-    public partial class Form1 : Form
+    public partial class FenetrePrincipale : Form
     {
-        public Form1()
+        public FenetrePrincipale()
         {
             InitializeComponent();
             /*string cheminCur = Path.Combine(Application.StartupPath, "Ressources", "LogoTomCorp.cur");

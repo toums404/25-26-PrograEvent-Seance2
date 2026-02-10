@@ -1,6 +1,6 @@
 ﻿namespace _25_26_PrograEvent_Seance2
 {
-    partial class Form1
+    partial class FenetrePrincipale
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FenetrePrincipale));
             menuStrip1 = new MenuStrip();
             MsControles = new ToolStripMenuItem();
             MiListe = new ToolStripMenuItem();
@@ -114,14 +115,15 @@
             MiApropos.Text = "A Propos";
             MiApropos.Click += MiApropos_Click;
             // 
-            // Form1
+            // FenetrePrincipale
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(menuStrip1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
-            Name = "Form1";
+            Name = "FenetrePrincipale";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
