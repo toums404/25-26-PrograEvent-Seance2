@@ -54,5 +54,5 @@ namespace _25_26_PrograEvent_Seance2
             FenetreAPropos form2 = new FenetreAPropos();
             form2.ShowDialog();
         }
-    }
+    }//test
 }
