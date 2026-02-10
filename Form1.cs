@@ -30,7 +30,8 @@ namespace _25_26_PrograEvent_Seance2
 
         private void MiListe_Click(object sender, EventArgs e)
         {
-            AffichageEnConstruction(sender, e);
+            EcranListe form4 = new EcranListe();
+            form4.ShowDialog();
         }
 
         private void MiBarreProg_Click(object sender, EventArgs e)
