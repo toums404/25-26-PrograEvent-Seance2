@@ -64,8 +64,19 @@ namespace _25_26_PrograEvent_Seance2
             if (lbPersonne.SelectedIndex >= 0)
             {
                 int index = lbPersonne.SelectedIndex;
+                int encodageSupprimer = encodages[index];
+
                 lbPersonne.Items.RemoveAt(index);
                 encodages.RemoveAt(index);
+
+                for (int i=0; i< encodages.Count; i++)
+                {
+                    if (encodages[i]> encodageSupprimer)
+                    {
+                        encodages[i]--;
+                    }
+                }
+                compteurEncodage = encodages.Count > 0 ? encodages.Max() + 1 : 1;
             }
         }
 
@@ -101,11 +112,22 @@ namespace _25_26_PrograEvent_Seance2
 
                 foreach (string ligne in File.ReadAllLines(NomFichier))
                 {
-                    lbPersonne.Items.Add(ligne);
-                    encodages.Add(compteurEncodage);
-                    compteurEncodage++;
+                    string [] partieTexte = ligne.Split('#');
+                    string texte = partieTexte[0].Trim();// texte à afficher
+                    int encodage = int.Parse(partieTexte[1].Trim()); // encodage associé
+                    lbPersonne.Items.Add(texte);
+                    encodages.Add(encodage);
+
                 }
-            }
+                    if (encodages.Count > 0)
+                    {
+                    compteurEncodage = encodages.Max() + 1; // mettre à jour le compteur d'encodage
+                    }
+                    else
+                    {
+                    compteurEncodage = 1;
+                    }
+                }
         }
 
         private void bEnregistrer_Click(object sender, EventArgs e)
@@ -115,9 +137,11 @@ namespace _25_26_PrograEvent_Seance2
                 NomFichier = sfdEnregistrer.FileName;
 
                 List<string> lignes = new List<string>();
-                foreach (var item in lbPersonne.Items)
+                for (int i = 0; i < lbPersonne.Items.Count; i++)
                 {
-                    lignes.Add(item.ToString());
+                    string texte = lbPersonne.Items[i].ToString();
+                    int encodage = encodages[i];
+                    lignes.Add(texte + "#" + encodage);// format de stockage : "texte#encodage"
                 }
                 File.WriteAllLines(NomFichier, lignes);
             }
@@ -133,7 +157,7 @@ namespace _25_26_PrograEvent_Seance2
                 MessageBox.Show(
                     "Index :" + index +
                     "\nValeur :" + lbPersonne.SelectedItem.ToString() +
-                    "\nEncodage :" + encodage
+                    "\nEncodage : #" + encodage// a supprimer si on veut que l'encodage soit invisible pour l'utilisateur
                     );
             }
         }
