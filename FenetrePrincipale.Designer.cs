@@ -39,6 +39,8 @@
             MiEditeur = new ToolStripMenuItem();
             MsAide = new ToolStripMenuItem();
             MiApropos = new ToolStripMenuItem();
+            bonusToolStripMenuItem = new ToolStripMenuItem();
+            MiMalware = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -46,7 +48,7 @@
             // 
             menuStrip1.BackColor = SystemColors.ActiveCaption;
             menuStrip1.ImageScalingSize = new Size(24, 24);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { MsControles, MsApplications, MsAide });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { MsControles, MsApplications, MsAide, bonusToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 33);
@@ -115,6 +117,20 @@
             MiApropos.Text = "A Propos";
             MiApropos.Click += MiApropos_Click;
             // 
+            // bonusToolStripMenuItem
+            // 
+            bonusToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MiMalware });
+            bonusToolStripMenuItem.Name = "bonusToolStripMenuItem";
+            bonusToolStripMenuItem.Size = new Size(77, 29);
+            bonusToolStripMenuItem.Text = "Bonus";
+            // 
+            // MiMalware
+            // 
+            MiMalware.Name = "MiMalware";
+            MiMalware.Size = new Size(270, 34);
+            MiMalware.Text = "Malware";
+            MiMalware.Click += MiMalware_Click;
+            // 
             // FenetrePrincipale
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -145,5 +161,7 @@
         private ToolStripMenuItem MiEditeur;
         private ToolStripMenuItem MsAide;
         private ToolStripMenuItem MiApropos;
+        private ToolStripMenuItem bonusToolStripMenuItem;
+        private ToolStripMenuItem MiMalware;
     }
 }

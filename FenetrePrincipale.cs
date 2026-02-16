@@ -55,5 +55,11 @@ namespace _25_26_PrograEvent_Seance2
             FenetreAPropos form2 = new FenetreAPropos();
             form2.ShowDialog();
         }
-    }//test
+
+        private void MiMalware_Click(object sender, EventArgs e)
+        {
+            FenetreMalware fenetreMalware = new FenetreMalware();
+            fenetreMalware.ShowDialog();
+        }
+    }
 }
