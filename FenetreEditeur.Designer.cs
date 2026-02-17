@@ -56,8 +56,8 @@
             pbOuvrir = new PictureBox();
             pbNouveau = new PictureBox();
             rtbTexte = new RichTextBox();
-            openFileDialog1 = new OpenFileDialog();
-            saveFileDialog1 = new SaveFileDialog();
+            ofdOpen = new OpenFileDialog();
+            ofdSave = new SaveFileDialog();
             fontDialog1 = new FontDialog();
             menuStrip1.SuspendLayout();
             pMenu.SuspendLayout();
@@ -88,26 +88,30 @@
             // MiNouveau
             // 
             MiNouveau.Name = "MiNouveau";
-            MiNouveau.Size = new Size(198, 34);
+            MiNouveau.Size = new Size(270, 34);
             MiNouveau.Text = "Nouveau";
+            MiNouveau.Click += MiNouveau_Click;
             // 
             // MiOuvrir
             // 
             MiOuvrir.Name = "MiOuvrir";
-            MiOuvrir.Size = new Size(198, 34);
+            MiOuvrir.Size = new Size(270, 34);
             MiOuvrir.Text = "Ouvrir";
+            MiOuvrir.Click += MiOuvrir_Click;
             // 
             // MiEnregistrer
             // 
             MiEnregistrer.Name = "MiEnregistrer";
-            MiEnregistrer.Size = new Size(198, 34);
+            MiEnregistrer.Size = new Size(270, 34);
             MiEnregistrer.Text = "Enregistrer";
+            MiEnregistrer.Click += MiEnregistrer_Click;
             // 
             // MiQuitter
             // 
             MiQuitter.Name = "MiQuitter";
-            MiQuitter.Size = new Size(198, 34);
+            MiQuitter.Size = new Size(270, 34);
             MiQuitter.Text = "Quitter";
+            MiQuitter.Click += MiQuitter_Click;
             // 
             // MsEdition
             // 
@@ -121,18 +125,21 @@
             MiCopier.Name = "MiCopier";
             MiCopier.Size = new Size(172, 34);
             MiCopier.Text = "Copier";
+            MiCopier.Click += MiCopier_Click;
             // 
             // MiCouper
             // 
             MiCouper.Name = "MiCouper";
             MiCouper.Size = new Size(172, 34);
             MiCouper.Text = "Couper";
+            MiCouper.Click += MiCouper_Click;
             // 
             // MiColler
             // 
             MiColler.Name = "MiColler";
             MiColler.Size = new Size(172, 34);
             MiColler.Text = "Coller";
+            MiColler.Click += MiColler_Click;
             // 
             // MsFormat
             // 
@@ -153,24 +160,28 @@
             centreToolStripMenuItem.Name = "centreToolStripMenuItem";
             centreToolStripMenuItem.Size = new Size(172, 34);
             centreToolStripMenuItem.Text = "Centre";
+            centreToolStripMenuItem.Click += centreToolStripMenuItem_Click;
             // 
             // gaucheToolStripMenuItem
             // 
             gaucheToolStripMenuItem.Name = "gaucheToolStripMenuItem";
             gaucheToolStripMenuItem.Size = new Size(172, 34);
             gaucheToolStripMenuItem.Text = "Gauche";
+            gaucheToolStripMenuItem.Click += gaucheToolStripMenuItem_Click;
             // 
             // droiteToolStripMenuItem
             // 
             droiteToolStripMenuItem.Name = "droiteToolStripMenuItem";
             droiteToolStripMenuItem.Size = new Size(172, 34);
             droiteToolStripMenuItem.Text = "Droite";
+            droiteToolStripMenuItem.Click += droiteToolStripMenuItem_Click;
             // 
             // MiPolice
             // 
             MiPolice.Name = "MiPolice";
             MiPolice.Size = new Size(187, 34);
             MiPolice.Text = "Police";
+            MiPolice.Click += MiPolice_Click;
             // 
             // MiCaractere
             // 
@@ -184,24 +195,28 @@
             Mi2Gras.Name = "Mi2Gras";
             Mi2Gras.Size = new Size(183, 34);
             Mi2Gras.Text = "Gras";
+            Mi2Gras.Click += Mi2Gras_Click;
             // 
             // Mi2Italique
             // 
             Mi2Italique.Name = "Mi2Italique";
             Mi2Italique.Size = new Size(183, 34);
             Mi2Italique.Text = "Italique";
+            Mi2Italique.Click += Mi2Italique_Click;
             // 
             // Mi2Souligne
             // 
             Mi2Souligne.Name = "Mi2Souligne";
             Mi2Souligne.Size = new Size(183, 34);
             Mi2Souligne.Text = "Souligné";
+            Mi2Souligne.Click += Mi2Souligne_Click;
             // 
             // Mi2Barre
             // 
             Mi2Barre.Name = "Mi2Barre";
             Mi2Barre.Size = new Size(183, 34);
             Mi2Barre.Text = "Barré";
+            Mi2Barre.Click += Mi2Barre_Click;
             // 
             // pMenu
             // 
@@ -217,6 +232,7 @@
             // 
             // pbQuitter
             // 
+            pbQuitter.Cursor = Cursors.Hand;
             pbQuitter.Image = (Image)resources.GetObject("pbQuitter.Image");
             pbQuitter.Location = new Point(111, 3);
             pbQuitter.Name = "pbQuitter";
@@ -224,9 +240,11 @@
             pbQuitter.SizeMode = PictureBoxSizeMode.StretchImage;
             pbQuitter.TabIndex = 3;
             pbQuitter.TabStop = false;
+            pbQuitter.Click += pbQuitter_Click;
             // 
             // pbEnregistrer
             // 
+            pbEnregistrer.Cursor = Cursors.Hand;
             pbEnregistrer.Image = (Image)resources.GetObject("pbEnregistrer.Image");
             pbEnregistrer.Location = new Point(75, 3);
             pbEnregistrer.Name = "pbEnregistrer";
@@ -234,9 +252,11 @@
             pbEnregistrer.SizeMode = PictureBoxSizeMode.StretchImage;
             pbEnregistrer.TabIndex = 2;
             pbEnregistrer.TabStop = false;
+            pbEnregistrer.Click += pbEnregistrer_Click;
             // 
             // pbOuvrir
             // 
+            pbOuvrir.Cursor = Cursors.Hand;
             pbOuvrir.Image = (Image)resources.GetObject("pbOuvrir.Image");
             pbOuvrir.Location = new Point(39, 3);
             pbOuvrir.Name = "pbOuvrir";
@@ -244,9 +264,11 @@
             pbOuvrir.SizeMode = PictureBoxSizeMode.StretchImage;
             pbOuvrir.TabIndex = 1;
             pbOuvrir.TabStop = false;
+            pbOuvrir.Click += pbOuvrir_Click;
             // 
             // pbNouveau
             // 
+            pbNouveau.Cursor = Cursors.Hand;
             pbNouveau.Image = (Image)resources.GetObject("pbNouveau.Image");
             pbNouveau.Location = new Point(3, 3);
             pbNouveau.Name = "pbNouveau";
@@ -254,6 +276,7 @@
             pbNouveau.SizeMode = PictureBoxSizeMode.StretchImage;
             pbNouveau.TabIndex = 0;
             pbNouveau.TabStop = false;
+            pbNouveau.Click += pbNouveau_Click;
             // 
             // rtbTexte
             // 
@@ -263,10 +286,11 @@
             rtbTexte.Size = new Size(800, 370);
             rtbTexte.TabIndex = 0;
             rtbTexte.Text = "";
+            rtbTexte.TextChanged += rtbTexte_TextChanged;
             // 
-            // openFileDialog1
+            // ofdOpen
             // 
-            openFileDialog1.FileName = "openFileDialog1";
+            ofdOpen.FileName = "openFileDialog1";
             // 
             // FenetreEditeur
             // 
@@ -281,6 +305,7 @@
             Name = "FenetreEditeur";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FenetreEditeur";
+            Load += FenetreEditeur_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             pMenu.ResumeLayout(false);
@@ -321,8 +346,8 @@
         private PictureBox pbEnregistrer;
         private PictureBox pbOuvrir;
         private PictureBox pbNouveau;
-        private OpenFileDialog openFileDialog1;
-        private SaveFileDialog saveFileDialog1;
+        private OpenFileDialog ofdOpen;
+        private SaveFileDialog ofdSave;
         private FontDialog fontDialog1;
     }
 }
