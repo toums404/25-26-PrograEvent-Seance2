@@ -88,28 +88,28 @@
             // MiNouveau
             // 
             MiNouveau.Name = "MiNouveau";
-            MiNouveau.Size = new Size(270, 34);
+            MiNouveau.Size = new Size(198, 34);
             MiNouveau.Text = "Nouveau";
             MiNouveau.Click += MiNouveau_Click;
             // 
             // MiOuvrir
             // 
             MiOuvrir.Name = "MiOuvrir";
-            MiOuvrir.Size = new Size(270, 34);
+            MiOuvrir.Size = new Size(198, 34);
             MiOuvrir.Text = "Ouvrir";
             MiOuvrir.Click += MiOuvrir_Click;
             // 
             // MiEnregistrer
             // 
             MiEnregistrer.Name = "MiEnregistrer";
-            MiEnregistrer.Size = new Size(270, 34);
+            MiEnregistrer.Size = new Size(198, 34);
             MiEnregistrer.Text = "Enregistrer";
             MiEnregistrer.Click += MiEnregistrer_Click;
             // 
             // MiQuitter
             // 
             MiQuitter.Name = "MiQuitter";
-            MiQuitter.Size = new Size(270, 34);
+            MiQuitter.Size = new Size(198, 34);
             MiQuitter.Text = "Quitter";
             MiQuitter.Click += MiQuitter_Click;
             // 
@@ -280,10 +280,10 @@
             // 
             // rtbTexte
             // 
-            rtbTexte.Dock = DockStyle.Bottom;
-            rtbTexte.Location = new Point(0, 80);
+            rtbTexte.Dock = DockStyle.Fill;
+            rtbTexte.Location = new Point(0, 74);
             rtbTexte.Name = "rtbTexte";
-            rtbTexte.Size = new Size(800, 370);
+            rtbTexte.Size = new Size(800, 376);
             rtbTexte.TabIndex = 0;
             rtbTexte.Text = "";
             rtbTexte.TextChanged += rtbTexte_TextChanged;
