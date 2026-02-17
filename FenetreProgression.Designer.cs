@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FenetreProgression));
             panel1 = new Panel();
             bReprendre = new Button();
             bPause = new Button();
@@ -115,6 +116,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(402, 584);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FenetreProgression";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FenetreProgression";

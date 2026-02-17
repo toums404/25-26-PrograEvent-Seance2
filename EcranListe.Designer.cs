@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EcranListe));
             lFichier = new Label();
             lNom = new Label();
             lQualite = new Label();
@@ -204,6 +205,7 @@
             Controls.Add(gbDetail);
             Controls.Add(lFichier);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "EcranListe";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "EcranListe";

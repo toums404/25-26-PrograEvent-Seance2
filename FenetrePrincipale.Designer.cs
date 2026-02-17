@@ -99,7 +99,7 @@
             // MiEditeur
             // 
             MiEditeur.Name = "MiEditeur";
-            MiEditeur.Size = new Size(169, 34);
+            MiEditeur.Size = new Size(270, 34);
             MiEditeur.Text = "Editeur";
             MiEditeur.Click += MiEditeur_Click;
             // 
@@ -127,7 +127,7 @@
             // MiMalware
             // 
             MiMalware.Name = "MiMalware";
-            MiMalware.Size = new Size(270, 34);
+            MiMalware.Size = new Size(180, 34);
             MiMalware.Text = "Malware";
             MiMalware.Click += MiMalware_Click;
             // 
@@ -141,7 +141,7 @@
             MainMenuStrip = menuStrip1;
             Name = "FenetrePrincipale";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "TomCorp™";
             Load += Form1_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();

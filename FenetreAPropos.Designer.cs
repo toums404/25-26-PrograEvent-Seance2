@@ -129,6 +129,7 @@
             Controls.Add(panel1);
             Controls.Add(bOk);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FenetreAPropos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FenetreAPropos";

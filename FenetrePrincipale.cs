@@ -42,7 +42,8 @@ namespace _25_26_PrograEvent_Seance2
 
         private void MiEditeur_Click(object sender, EventArgs e)
         {
-            AffichageEnConstruction(sender, e);
+            FenetreEditeur form5 = new FenetreEditeur();
+            form5.ShowDialog();
         }
 
         private void MiQuitter_Click(object sender, EventArgs e)
