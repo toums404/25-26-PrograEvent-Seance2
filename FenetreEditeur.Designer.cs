@@ -88,28 +88,31 @@
             // MiNouveau
             // 
             MiNouveau.Name = "MiNouveau";
-            MiNouveau.Size = new Size(198, 34);
+            MiNouveau.ShortcutKeys = Keys.Control | Keys.N;
+            MiNouveau.Size = new Size(259, 34);
             MiNouveau.Text = "Nouveau";
             MiNouveau.Click += MiNouveau_Click;
             // 
             // MiOuvrir
             // 
             MiOuvrir.Name = "MiOuvrir";
-            MiOuvrir.Size = new Size(198, 34);
+            MiOuvrir.ShortcutKeys = Keys.Control | Keys.O;
+            MiOuvrir.Size = new Size(259, 34);
             MiOuvrir.Text = "Ouvrir";
             MiOuvrir.Click += MiOuvrir_Click;
             // 
             // MiEnregistrer
             // 
             MiEnregistrer.Name = "MiEnregistrer";
-            MiEnregistrer.Size = new Size(198, 34);
+            MiEnregistrer.ShortcutKeys = Keys.Control | Keys.S;
+            MiEnregistrer.Size = new Size(259, 34);
             MiEnregistrer.Text = "Enregistrer";
             MiEnregistrer.Click += MiEnregistrer_Click;
             // 
             // MiQuitter
             // 
             MiQuitter.Name = "MiQuitter";
-            MiQuitter.Size = new Size(198, 34);
+            MiQuitter.Size = new Size(259, 34);
             MiQuitter.Text = "Quitter";
             MiQuitter.Click += MiQuitter_Click;
             // 
@@ -152,7 +155,7 @@
             // 
             MiJustifier.DropDownItems.AddRange(new ToolStripItem[] { centreToolStripMenuItem, gaucheToolStripMenuItem, droiteToolStripMenuItem });
             MiJustifier.Name = "MiJustifier";
-            MiJustifier.Size = new Size(187, 34);
+            MiJustifier.Size = new Size(270, 34);
             MiJustifier.Text = "Justifier";
             // 
             // centreToolStripMenuItem
@@ -179,7 +182,7 @@
             // MiPolice
             // 
             MiPolice.Name = "MiPolice";
-            MiPolice.Size = new Size(187, 34);
+            MiPolice.Size = new Size(270, 34);
             MiPolice.Text = "Police";
             MiPolice.Click += MiPolice_Click;
             // 
@@ -187,7 +190,7 @@
             // 
             MiCaractere.DropDownItems.AddRange(new ToolStripItem[] { Mi2Gras, Mi2Italique, Mi2Souligne, Mi2Barre });
             MiCaractere.Name = "MiCaractere";
-            MiCaractere.Size = new Size(187, 34);
+            MiCaractere.Size = new Size(270, 34);
             MiCaractere.Text = "Caractère";
             // 
             // Mi2Gras
