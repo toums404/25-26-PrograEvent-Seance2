@@ -50,7 +50,21 @@
             Mi2Italique = new ToolStripMenuItem();
             Mi2Souligne = new ToolStripMenuItem();
             Mi2Barre = new ToolStripMenuItem();
+            pMenu = new Panel();
+            pbQuitter = new PictureBox();
+            pbEnregistrer = new PictureBox();
+            pbOuvrir = new PictureBox();
+            pbNouveau = new PictureBox();
+            rtbTexte = new RichTextBox();
+            openFileDialog1 = new OpenFileDialog();
+            saveFileDialog1 = new SaveFileDialog();
+            fontDialog1 = new FontDialog();
             menuStrip1.SuspendLayout();
+            pMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbQuitter).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbEnregistrer).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbOuvrir).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbNouveau).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -74,25 +88,25 @@
             // MiNouveau
             // 
             MiNouveau.Name = "MiNouveau";
-            MiNouveau.Size = new Size(270, 34);
+            MiNouveau.Size = new Size(198, 34);
             MiNouveau.Text = "Nouveau";
             // 
             // MiOuvrir
             // 
             MiOuvrir.Name = "MiOuvrir";
-            MiOuvrir.Size = new Size(270, 34);
+            MiOuvrir.Size = new Size(198, 34);
             MiOuvrir.Text = "Ouvrir";
             // 
             // MiEnregistrer
             // 
             MiEnregistrer.Name = "MiEnregistrer";
-            MiEnregistrer.Size = new Size(270, 34);
+            MiEnregistrer.Size = new Size(198, 34);
             MiEnregistrer.Text = "Enregistrer";
             // 
             // MiQuitter
             // 
             MiQuitter.Name = "MiQuitter";
-            MiQuitter.Size = new Size(270, 34);
+            MiQuitter.Size = new Size(198, 34);
             MiQuitter.Text = "Quitter";
             // 
             // MsEdition
@@ -189,11 +203,78 @@
             Mi2Barre.Size = new Size(183, 34);
             Mi2Barre.Text = "Barré";
             // 
+            // pMenu
+            // 
+            pMenu.Controls.Add(pbQuitter);
+            pMenu.Controls.Add(pbEnregistrer);
+            pMenu.Controls.Add(pbOuvrir);
+            pMenu.Controls.Add(pbNouveau);
+            pMenu.Dock = DockStyle.Top;
+            pMenu.Location = new Point(0, 33);
+            pMenu.Name = "pMenu";
+            pMenu.Size = new Size(800, 41);
+            pMenu.TabIndex = 1;
+            // 
+            // pbQuitter
+            // 
+            pbQuitter.Image = (Image)resources.GetObject("pbQuitter.Image");
+            pbQuitter.Location = new Point(111, 3);
+            pbQuitter.Name = "pbQuitter";
+            pbQuitter.Size = new Size(30, 30);
+            pbQuitter.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbQuitter.TabIndex = 3;
+            pbQuitter.TabStop = false;
+            // 
+            // pbEnregistrer
+            // 
+            pbEnregistrer.Image = (Image)resources.GetObject("pbEnregistrer.Image");
+            pbEnregistrer.Location = new Point(75, 3);
+            pbEnregistrer.Name = "pbEnregistrer";
+            pbEnregistrer.Size = new Size(30, 30);
+            pbEnregistrer.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbEnregistrer.TabIndex = 2;
+            pbEnregistrer.TabStop = false;
+            // 
+            // pbOuvrir
+            // 
+            pbOuvrir.Image = (Image)resources.GetObject("pbOuvrir.Image");
+            pbOuvrir.Location = new Point(39, 3);
+            pbOuvrir.Name = "pbOuvrir";
+            pbOuvrir.Size = new Size(30, 30);
+            pbOuvrir.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbOuvrir.TabIndex = 1;
+            pbOuvrir.TabStop = false;
+            // 
+            // pbNouveau
+            // 
+            pbNouveau.Image = (Image)resources.GetObject("pbNouveau.Image");
+            pbNouveau.Location = new Point(3, 3);
+            pbNouveau.Name = "pbNouveau";
+            pbNouveau.Size = new Size(30, 30);
+            pbNouveau.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbNouveau.TabIndex = 0;
+            pbNouveau.TabStop = false;
+            // 
+            // rtbTexte
+            // 
+            rtbTexte.Dock = DockStyle.Bottom;
+            rtbTexte.Location = new Point(0, 80);
+            rtbTexte.Name = "rtbTexte";
+            rtbTexte.Size = new Size(800, 370);
+            rtbTexte.TabIndex = 0;
+            rtbTexte.Text = "";
+            // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            // 
             // FenetreEditeur
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(rtbTexte);
+            Controls.Add(pMenu);
             Controls.Add(menuStrip1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
@@ -202,6 +283,11 @@
             Text = "FenetreEditeur";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            pMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pbQuitter).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbEnregistrer).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbOuvrir).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbNouveau).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -229,5 +315,14 @@
         private ToolStripMenuItem Mi2Italique;
         private ToolStripMenuItem Mi2Souligne;
         private ToolStripMenuItem Mi2Barre;
+        private Panel pMenu;
+        private RichTextBox rtbTexte;
+        private PictureBox pbQuitter;
+        private PictureBox pbEnregistrer;
+        private PictureBox pbOuvrir;
+        private PictureBox pbNouveau;
+        private OpenFileDialog openFileDialog1;
+        private SaveFileDialog saveFileDialog1;
+        private FontDialog fontDialog1;
     }
 }
