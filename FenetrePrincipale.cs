@@ -68,5 +68,11 @@ namespace _25_26_PrograEvent_Seance2
             FenetreSpirographe fenetreSpirographe = new FenetreSpirographe();
             fenetreSpirographe.ShowDialog();
         }
+
+        private void MiHorloge_Click(object sender, EventArgs e)
+        {
+            FenetreHorloge fenetreHorloge = new FenetreHorloge();
+            fenetreHorloge.ShowDialog();
+        }
     }
 }

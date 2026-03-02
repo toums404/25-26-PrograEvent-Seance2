@@ -42,6 +42,7 @@
             bonusToolStripMenuItem = new ToolStripMenuItem();
             MiMalware = new ToolStripMenuItem();
             MiSpirographe = new ToolStripMenuItem();
+            MiHorloge = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -120,7 +121,7 @@
             // 
             // bonusToolStripMenuItem
             // 
-            bonusToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MiMalware, MiSpirographe });
+            bonusToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MiMalware, MiSpirographe, MiHorloge });
             bonusToolStripMenuItem.Name = "bonusToolStripMenuItem";
             bonusToolStripMenuItem.Size = new Size(77, 29);
             bonusToolStripMenuItem.Text = "Bonus";
@@ -138,6 +139,13 @@
             MiSpirographe.Size = new Size(270, 34);
             MiSpirographe.Text = "Spirographe";
             MiSpirographe.Click += MiSpirographe_Click;
+            // 
+            // MiHorloge
+            // 
+            MiHorloge.Name = "MiHorloge";
+            MiHorloge.Size = new Size(270, 34);
+            MiHorloge.Text = "Horloge";
+            MiHorloge.Click += MiHorloge_Click;
             // 
             // FenetrePrincipale
             // 
@@ -172,5 +180,6 @@
         private ToolStripMenuItem bonusToolStripMenuItem;
         private ToolStripMenuItem MiMalware;
         private ToolStripMenuItem MiSpirographe;
+        private ToolStripMenuItem MiHorloge;
     }
 }
