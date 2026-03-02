@@ -30,20 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FenetreSpirographe));
             GbParametrage = new GroupBox();
-            bGo = new Button();
-            bFond = new Button();
-            bTrait = new Button();
-            TbSommet = new TrackBar();
-            TbDensite = new TrackBar();
-            TbProfondeur = new TrackBar();
             lSommet = new Label();
             lDensite = new Label();
             lProfondeur = new Label();
-            colorDialog1 = new ColorDialog();
+            TbProfondeur = new TrackBar();
+            TbDensite = new TrackBar();
+            TbSommet = new TrackBar();
+            bGo = new Button();
+            bFond = new Button();
+            bTrait = new Button();
+            CdCouleur = new ColorDialog();
             GbParametrage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)TbSommet).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)TbDensite).BeginInit();
             ((System.ComponentModel.ISupportInitialize)TbProfondeur).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)TbDensite).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)TbSommet).BeginInit();
             SuspendLayout();
             // 
             // GbParametrage
@@ -61,59 +61,6 @@
             GbParametrage.TabIndex = 0;
             GbParametrage.TabStop = false;
             GbParametrage.Text = "Paramétrage";
-            // 
-            // bGo
-            // 
-            bGo.Cursor = Cursors.Hand;
-            bGo.Dock = DockStyle.Bottom;
-            bGo.Location = new Point(3, 311);
-            bGo.Name = "bGo";
-            bGo.Size = new Size(294, 34);
-            bGo.TabIndex = 1;
-            bGo.Text = "GO !";
-            bGo.UseVisualStyleBackColor = true;
-            // 
-            // bFond
-            // 
-            bFond.Cursor = Cursors.Hand;
-            bFond.Location = new Point(167, 356);
-            bFond.Name = "bFond";
-            bFond.Size = new Size(135, 65);
-            bFond.TabIndex = 2;
-            bFond.Text = "Couleur de fond";
-            bFond.UseVisualStyleBackColor = true;
-            // 
-            // bTrait
-            // 
-            bTrait.Cursor = Cursors.Hand;
-            bTrait.ImageAlign = ContentAlignment.MiddleLeft;
-            bTrait.Location = new Point(2, 356);
-            bTrait.Name = "bTrait";
-            bTrait.Size = new Size(135, 65);
-            bTrait.TabIndex = 3;
-            bTrait.Text = "Couleur du trait";
-            bTrait.UseVisualStyleBackColor = true;
-            // 
-            // TbSommet
-            // 
-            TbSommet.Location = new Point(0, 86);
-            TbSommet.Name = "TbSommet";
-            TbSommet.Size = new Size(288, 69);
-            TbSommet.TabIndex = 4;
-            // 
-            // TbDensite
-            // 
-            TbDensite.Location = new Point(0, 161);
-            TbDensite.Name = "TbDensite";
-            TbDensite.Size = new Size(288, 69);
-            TbDensite.TabIndex = 5;
-            // 
-            // TbProfondeur
-            // 
-            TbProfondeur.Location = new Point(3, 236);
-            TbProfondeur.Name = "TbProfondeur";
-            TbProfondeur.Size = new Size(288, 69);
-            TbProfondeur.TabIndex = 6;
             // 
             // lSommet
             // 
@@ -142,6 +89,71 @@
             lProfondeur.TabIndex = 6;
             lProfondeur.Text = "Profondeur de dessins (20 à 80)";
             // 
+            // TbProfondeur
+            // 
+            TbProfondeur.Location = new Point(3, 236);
+            TbProfondeur.Maximum = 80;
+            TbProfondeur.Minimum = 20;
+            TbProfondeur.Name = "TbProfondeur";
+            TbProfondeur.Size = new Size(288, 69);
+            TbProfondeur.TabIndex = 6;
+            TbProfondeur.Value = 20;
+            // 
+            // TbDensite
+            // 
+            TbDensite.Location = new Point(0, 161);
+            TbDensite.Maximum = 20;
+            TbDensite.Minimum = 5;
+            TbDensite.Name = "TbDensite";
+            TbDensite.Size = new Size(288, 69);
+            TbDensite.TabIndex = 5;
+            TbDensite.Value = 5;
+            // 
+            // TbSommet
+            // 
+            TbSommet.Location = new Point(0, 86);
+            TbSommet.Maximum = 8;
+            TbSommet.Minimum = 3;
+            TbSommet.Name = "TbSommet";
+            TbSommet.Size = new Size(288, 69);
+            TbSommet.TabIndex = 4;
+            TbSommet.Value = 3;
+            // 
+            // bGo
+            // 
+            bGo.Cursor = Cursors.Hand;
+            bGo.Dock = DockStyle.Bottom;
+            bGo.Location = new Point(3, 311);
+            bGo.Name = "bGo";
+            bGo.Size = new Size(294, 34);
+            bGo.TabIndex = 1;
+            bGo.Text = "GO !";
+            bGo.UseVisualStyleBackColor = true;
+            bGo.Click += bGo_Click;
+            // 
+            // bFond
+            // 
+            bFond.Cursor = Cursors.Hand;
+            bFond.Location = new Point(167, 356);
+            bFond.Name = "bFond";
+            bFond.Size = new Size(135, 65);
+            bFond.TabIndex = 2;
+            bFond.Text = "Couleur de fond";
+            bFond.UseVisualStyleBackColor = true;
+            bFond.Click += bFond_Click;
+            // 
+            // bTrait
+            // 
+            bTrait.Cursor = Cursors.Hand;
+            bTrait.ImageAlign = ContentAlignment.MiddleLeft;
+            bTrait.Location = new Point(2, 356);
+            bTrait.Name = "bTrait";
+            bTrait.Size = new Size(135, 65);
+            bTrait.TabIndex = 3;
+            bTrait.Text = "Couleur du trait";
+            bTrait.UseVisualStyleBackColor = true;
+            bTrait.Click += bTrait_Click;
+            // 
             // FenetreSpirographe
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -150,15 +162,19 @@
             Controls.Add(bFond);
             Controls.Add(bTrait);
             Controls.Add(GbParametrage);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "FenetreSpirographe";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Spirographe";
+            Load += FenetreSpirographe_Load;
+            Paint += FenetreSpirographe_Paint;
             GbParametrage.ResumeLayout(false);
             GbParametrage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)TbSommet).EndInit();
-            ((System.ComponentModel.ISupportInitialize)TbDensite).EndInit();
             ((System.ComponentModel.ISupportInitialize)TbProfondeur).EndInit();
+            ((System.ComponentModel.ISupportInitialize)TbDensite).EndInit();
+            ((System.ComponentModel.ISupportInitialize)TbSommet).EndInit();
             ResumeLayout(false);
         }
 
@@ -174,6 +190,6 @@
         private TrackBar TbProfondeur;
         private TrackBar TbDensite;
         private TrackBar TbSommet;
-        private ColorDialog colorDialog1;
+        private ColorDialog CdCouleur;
     }
 }
