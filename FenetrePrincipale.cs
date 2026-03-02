@@ -62,5 +62,11 @@ namespace _25_26_PrograEvent_Seance2
             FenetreMalware fenetreMalware = new FenetreMalware();
             fenetreMalware.ShowDialog();
         }
+
+        private void MiSpirographe_Click(object sender, EventArgs e)
+        {
+            FenetreSpirographe fenetreSpirographe = new FenetreSpirographe();
+            fenetreSpirographe.ShowDialog();
+        }
     }
 }
