@@ -37,10 +37,10 @@
             lPositionY = new Label();
             lbClavier = new ListBox();
             bRAZ = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            tbGauche = new TextBox();
+            tbX = new TextBox();
+            tbY = new TextBox();
+            tbDroit = new TextBox();
             SuspendLayout();
             // 
             // pSouris
@@ -114,43 +114,47 @@
             bRAZ.Text = "Remise a zéro";
             bRAZ.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // tbGauche
             // 
-            textBox1.Location = new Point(310, 47);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(101, 31);
-            textBox1.TabIndex = 0;
+            tbGauche.Location = new Point(310, 47);
+            tbGauche.Name = "tbGauche";
+            tbGauche.ReadOnly = true;
+            tbGauche.Size = new Size(101, 31);
+            tbGauche.TabIndex = 0;
             // 
-            // textBox2
+            // tbX
             // 
-            textBox2.Location = new Point(563, 47);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(101, 31);
-            textBox2.TabIndex = 8;
+            tbX.Location = new Point(563, 47);
+            tbX.Name = "tbX";
+            tbX.ReadOnly = true;
+            tbX.Size = new Size(101, 31);
+            tbX.TabIndex = 8;
             // 
-            // textBox3
+            // tbY
             // 
-            textBox3.Location = new Point(681, 47);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(101, 31);
-            textBox3.TabIndex = 9;
+            tbY.Location = new Point(681, 47);
+            tbY.Name = "tbY";
+            tbY.ReadOnly = true;
+            tbY.Size = new Size(101, 31);
+            tbY.TabIndex = 9;
             // 
-            // textBox4
+            // tbDroit
             // 
-            textBox4.Location = new Point(440, 47);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(101, 31);
-            textBox4.TabIndex = 10;
+            tbDroit.Location = new Point(440, 47);
+            tbDroit.Name = "tbDroit";
+            tbDroit.ReadOnly = true;
+            tbDroit.Size = new Size(101, 31);
+            tbDroit.TabIndex = 10;
             // 
             // FenetreSouris
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 463);
-            Controls.Add(textBox3);
-            Controls.Add(textBox4);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(tbY);
+            Controls.Add(tbDroit);
+            Controls.Add(tbX);
+            Controls.Add(tbGauche);
             Controls.Add(bRAZ);
             Controls.Add(lbClavier);
             Controls.Add(lPositionY);
@@ -160,6 +164,7 @@
             Controls.Add(lClavier);
             Controls.Add(pSouris);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            KeyPreview = true;
             Name = "FenetreSouris";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Monitoring du clavier et de la souris";
@@ -177,9 +182,9 @@
         private Label lPositionY;
         private ListBox lbClavier;
         private Button bRAZ;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox tbGauche;
+        private TextBox tbX;
+        private TextBox tbY;
+        private TextBox tbDroit;
     }
 }

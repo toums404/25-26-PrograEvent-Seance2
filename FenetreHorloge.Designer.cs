@@ -45,6 +45,7 @@
             ClientSize = new Size(800, 450);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FenetreHorloge";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Horloge";
             Load += FenetreHorloge_Load;
             Paint += FenetreHorloge_Paint;
