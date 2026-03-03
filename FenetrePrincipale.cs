@@ -74,5 +74,11 @@ namespace _25_26_PrograEvent_Seance2
             FenetreHorloge fenetreHorloge = new FenetreHorloge();
             fenetreHorloge.ShowDialog();
         }
+
+        private void clavierEtSourisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FenetreSouris fenetreSouris = new FenetreSouris();
+            fenetreSouris.ShowDialog();
+        }
     }
 }

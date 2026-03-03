@@ -43,6 +43,7 @@
             MiMalware = new ToolStripMenuItem();
             MiSpirographe = new ToolStripMenuItem();
             MiHorloge = new ToolStripMenuItem();
+            clavierEtSourisToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -93,7 +94,7 @@
             // 
             // MsApplications
             // 
-            MsApplications.DropDownItems.AddRange(new ToolStripItem[] { MiEditeur });
+            MsApplications.DropDownItems.AddRange(new ToolStripItem[] { MiEditeur, clavierEtSourisToolStripMenuItem });
             MsApplications.Name = "MsApplications";
             MsApplications.Size = new Size(126, 29);
             MsApplications.Text = "Applications";
@@ -101,7 +102,7 @@
             // MiEditeur
             // 
             MiEditeur.Name = "MiEditeur";
-            MiEditeur.Size = new Size(169, 34);
+            MiEditeur.Size = new Size(270, 34);
             MiEditeur.Text = "Editeur";
             MiEditeur.Click += MiEditeur_Click;
             // 
@@ -129,23 +130,30 @@
             // MiMalware
             // 
             MiMalware.Name = "MiMalware";
-            MiMalware.Size = new Size(270, 34);
+            MiMalware.Size = new Size(212, 34);
             MiMalware.Text = "Malware";
             MiMalware.Click += MiMalware_Click;
             // 
             // MiSpirographe
             // 
             MiSpirographe.Name = "MiSpirographe";
-            MiSpirographe.Size = new Size(270, 34);
+            MiSpirographe.Size = new Size(212, 34);
             MiSpirographe.Text = "Spirographe";
             MiSpirographe.Click += MiSpirographe_Click;
             // 
             // MiHorloge
             // 
             MiHorloge.Name = "MiHorloge";
-            MiHorloge.Size = new Size(270, 34);
+            MiHorloge.Size = new Size(212, 34);
             MiHorloge.Text = "Horloge";
             MiHorloge.Click += MiHorloge_Click;
+            // 
+            // clavierEtSourisToolStripMenuItem
+            // 
+            clavierEtSourisToolStripMenuItem.Name = "clavierEtSourisToolStripMenuItem";
+            clavierEtSourisToolStripMenuItem.Size = new Size(270, 34);
+            clavierEtSourisToolStripMenuItem.Text = "Clavier et souris";
+            clavierEtSourisToolStripMenuItem.Click += clavierEtSourisToolStripMenuItem_Click;
             // 
             // FenetrePrincipale
             // 
@@ -181,5 +189,6 @@
         private ToolStripMenuItem MiMalware;
         private ToolStripMenuItem MiSpirographe;
         private ToolStripMenuItem MiHorloge;
+        private ToolStripMenuItem clavierEtSourisToolStripMenuItem;
     }
 }
