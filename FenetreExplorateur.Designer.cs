@@ -43,8 +43,8 @@
             scSeparateur = new SplitContainer();
             tvRepertoire = new TreeView();
             lvFichier = new ListView();
-            Taille = new ColumnHeader();
             Nom = new ColumnHeader();
+            Taille = new ColumnHeader();
             Création = new ColumnHeader();
             Modification = new ColumnHeader();
             ilTreeView = new ImageList(components);
@@ -76,6 +76,7 @@
             tsbQuitter.Name = "tsbQuitter";
             tsbQuitter.Size = new Size(34, 28);
             tsbQuitter.Text = "toolStripButton1";
+            tsbQuitter.Click += tsbQuitter_Click;
             // 
             // toolStripSeparator1
             // 
@@ -95,26 +96,30 @@
             // tsaPetitesIcones
             // 
             tsaPetitesIcones.Name = "tsaPetitesIcones";
-            tsaPetitesIcones.Size = new Size(270, 34);
+            tsaPetitesIcones.Size = new Size(235, 34);
             tsaPetitesIcones.Text = "Petites Icones";
+            tsaPetitesIcones.Click += tsaPetitesIcones_Click;
             // 
             // tsaGrandesIcones
             // 
             tsaGrandesIcones.Name = "tsaGrandesIcones";
-            tsaGrandesIcones.Size = new Size(270, 34);
+            tsaGrandesIcones.Size = new Size(235, 34);
             tsaGrandesIcones.Text = "Grandes Icones";
+            tsaGrandesIcones.Click += tsaGrandesIcones_Click;
             // 
             // tsaListe
             // 
             tsaListe.Name = "tsaListe";
-            tsaListe.Size = new Size(270, 34);
+            tsaListe.Size = new Size(235, 34);
             tsaListe.Text = "Liste";
+            tsaListe.Click += tsaListe_Click;
             // 
             // tsaDetail
             // 
             tsaDetail.Name = "tsaDetail";
-            tsaDetail.Size = new Size(270, 34);
+            tsaDetail.Size = new Size(235, 34);
             tsaDetail.Text = "Détail";
+            tsaDetail.Click += tsaDetail_Click;
             // 
             // ssMessage
             // 
@@ -156,10 +161,11 @@
             tvRepertoire.Name = "tvRepertoire";
             tvRepertoire.Size = new Size(266, 385);
             tvRepertoire.TabIndex = 0;
+            tvRepertoire.AfterSelect += tvRepertoire_AfterSelect;
             // 
             // lvFichier
             // 
-            lvFichier.Columns.AddRange(new ColumnHeader[] { Taille, Nom, Création, Modification });
+            lvFichier.Columns.AddRange(new ColumnHeader[] { Nom, Taille, Création, Modification });
             lvFichier.Dock = DockStyle.Fill;
             lvFichier.Location = new Point(0, 0);
             lvFichier.Name = "lvFichier";
@@ -168,17 +174,15 @@
             lvFichier.UseCompatibleStateImageBehavior = false;
             lvFichier.View = View.Details;
             // 
-            // Taille
-            // 
-            Taille.DisplayIndex = 1;
-            Taille.Text = "Taille";
-            Taille.Width = 100;
-            // 
             // Nom
             // 
-            Nom.DisplayIndex = 0;
             Nom.Text = "Nom";
             Nom.Width = 150;
+            // 
+            // Taille
+            // 
+            Taille.Text = "Taille";
+            Taille.Width = 100;
             // 
             // Création
             // 
@@ -193,20 +197,25 @@
             // ilTreeView
             // 
             ilTreeView.ColorDepth = ColorDepth.Depth32Bit;
-            ilTreeView.ImageSize = new Size(16, 16);
+            ilTreeView.ImageStream = (ImageListStreamer)resources.GetObject("ilTreeView.ImageStream");
             ilTreeView.TransparentColor = Color.Transparent;
+            ilTreeView.Images.SetKeyName(0, "iconeOrdi.png");
+            ilTreeView.Images.SetKeyName(1, "DisqueDur.png");
+            ilTreeView.Images.SetKeyName(2, "Dossier.png");
             // 
             // ilGrand
             // 
             ilGrand.ColorDepth = ColorDepth.Depth32Bit;
-            ilGrand.ImageSize = new Size(16, 16);
+            ilGrand.ImageStream = (ImageListStreamer)resources.GetObject("ilGrand.ImageStream");
             ilGrand.TransparentColor = Color.Transparent;
+            ilGrand.Images.SetKeyName(0, "Fichier.png");
             // 
             // ilPetit
             // 
             ilPetit.ColorDepth = ColorDepth.Depth32Bit;
-            ilPetit.ImageSize = new Size(16, 16);
+            ilPetit.ImageStream = (ImageListStreamer)resources.GetObject("ilPetit.ImageStream");
             ilPetit.TransparentColor = Color.Transparent;
+            ilPetit.Images.SetKeyName(0, "Fichier.png");
             // 
             // FenetreExplorateur
             // 
@@ -220,6 +229,7 @@
             Name = "FenetreExplorateur";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Explorateur";
+            Load += FenetreExplorateur_Load;
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             ssMessage.ResumeLayout(false);
