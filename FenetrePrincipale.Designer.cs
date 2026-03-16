@@ -37,13 +37,14 @@
             MiQuitter = new ToolStripMenuItem();
             MsApplications = new ToolStripMenuItem();
             MiEditeur = new ToolStripMenuItem();
+            clavierEtSourisToolStripMenuItem = new ToolStripMenuItem();
             MsAide = new ToolStripMenuItem();
             MiApropos = new ToolStripMenuItem();
             bonusToolStripMenuItem = new ToolStripMenuItem();
             MiMalware = new ToolStripMenuItem();
             MiSpirographe = new ToolStripMenuItem();
             MiHorloge = new ToolStripMenuItem();
-            clavierEtSourisToolStripMenuItem = new ToolStripMenuItem();
+            explorateurToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -94,7 +95,7 @@
             // 
             // MsApplications
             // 
-            MsApplications.DropDownItems.AddRange(new ToolStripItem[] { MiEditeur, clavierEtSourisToolStripMenuItem });
+            MsApplications.DropDownItems.AddRange(new ToolStripItem[] { MiEditeur, clavierEtSourisToolStripMenuItem, explorateurToolStripMenuItem });
             MsApplications.Name = "MsApplications";
             MsApplications.Size = new Size(126, 29);
             MsApplications.Text = "Applications";
@@ -105,6 +106,13 @@
             MiEditeur.Size = new Size(270, 34);
             MiEditeur.Text = "Editeur";
             MiEditeur.Click += MiEditeur_Click;
+            // 
+            // clavierEtSourisToolStripMenuItem
+            // 
+            clavierEtSourisToolStripMenuItem.Name = "clavierEtSourisToolStripMenuItem";
+            clavierEtSourisToolStripMenuItem.Size = new Size(270, 34);
+            clavierEtSourisToolStripMenuItem.Text = "Clavier et souris";
+            clavierEtSourisToolStripMenuItem.Click += clavierEtSourisToolStripMenuItem_Click;
             // 
             // MsAide
             // 
@@ -148,12 +156,12 @@
             MiHorloge.Text = "Horloge";
             MiHorloge.Click += MiHorloge_Click;
             // 
-            // clavierEtSourisToolStripMenuItem
+            // explorateurToolStripMenuItem
             // 
-            clavierEtSourisToolStripMenuItem.Name = "clavierEtSourisToolStripMenuItem";
-            clavierEtSourisToolStripMenuItem.Size = new Size(270, 34);
-            clavierEtSourisToolStripMenuItem.Text = "Clavier et souris";
-            clavierEtSourisToolStripMenuItem.Click += clavierEtSourisToolStripMenuItem_Click;
+            explorateurToolStripMenuItem.Name = "explorateurToolStripMenuItem";
+            explorateurToolStripMenuItem.Size = new Size(270, 34);
+            explorateurToolStripMenuItem.Text = "Explorateur";
+            explorateurToolStripMenuItem.Click += explorateurToolStripMenuItem_Click;
             // 
             // FenetrePrincipale
             // 
@@ -190,5 +198,6 @@
         private ToolStripMenuItem MiSpirographe;
         private ToolStripMenuItem MiHorloge;
         private ToolStripMenuItem clavierEtSourisToolStripMenuItem;
+        private ToolStripMenuItem explorateurToolStripMenuItem;
     }
 }

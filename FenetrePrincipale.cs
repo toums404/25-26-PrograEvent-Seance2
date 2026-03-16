@@ -80,5 +80,11 @@ namespace _25_26_PrograEvent_Seance2
             FenetreSouris fenetreSouris = new FenetreSouris();
             fenetreSouris.ShowDialog();
         }
+
+        private void explorateurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FenetreExplorateur fenetreExplorateur = new FenetreExplorateur();
+            fenetreExplorateur.ShowDialog();
+        }
     }
 }

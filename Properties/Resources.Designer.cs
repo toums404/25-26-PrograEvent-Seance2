@@ -59,5 +59,15 @@ namespace _25_26_PrograEvent_Seance2.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap quitterFichier {
+            get {
+                object obj = ResourceManager.GetObject("quitterFichier", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
