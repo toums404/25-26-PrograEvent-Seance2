@@ -86,5 +86,11 @@ namespace _25_26_PrograEvent_Seance2
             FenetreExplorateur fenetreExplorateur = new FenetreExplorateur();
             fenetreExplorateur.ShowDialog();
         }
+
+        private void baseDeDonnéesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FenetreBDD fenetreBDD = new FenetreBDD();
+            fenetreBDD.ShowDialog();
+        }
     }
 }
