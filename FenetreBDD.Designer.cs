@@ -33,8 +33,8 @@
             panel1 = new Panel();
             lPrenom = new Label();
             lNom = new Label();
-            textBox1 = new TextBox();
-            te = new TextBox();
+            tbNom = new TextBox();
+            tbPrenom = new TextBox();
             bAjouter = new Button();
             bDenombrer = new Button();
             bConsulter = new Button();
@@ -60,8 +60,8 @@
             // 
             panel1.Controls.Add(lPrenom);
             panel1.Controls.Add(lNom);
-            panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(te);
+            panel1.Controls.Add(tbNom);
+            panel1.Controls.Add(tbPrenom);
             panel1.Controls.Add(bAjouter);
             panel1.Controls.Add(bDenombrer);
             panel1.Controls.Add(bConsulter);
@@ -89,19 +89,19 @@
             lNom.TabIndex = 13;
             lNom.Text = "Nom";
             // 
-            // textBox1
+            // tbNom
             // 
-            textBox1.Location = new Point(75, 241);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(150, 31);
-            textBox1.TabIndex = 12;
+            tbNom.Location = new Point(75, 241);
+            tbNom.Name = "tbNom";
+            tbNom.Size = new Size(150, 31);
+            tbNom.TabIndex = 12;
             // 
-            // te
+            // tbPrenom
             // 
-            te.Location = new Point(75, 328);
-            te.Name = "te";
-            te.Size = new Size(150, 31);
-            te.TabIndex = 11;
+            tbPrenom.Location = new Point(75, 328);
+            tbPrenom.Name = "tbPrenom";
+            tbPrenom.Size = new Size(150, 31);
+            tbPrenom.TabIndex = 11;
             // 
             // bAjouter
             // 
@@ -111,6 +111,7 @@
             bAjouter.TabIndex = 10;
             bAjouter.Text = "Ajouter";
             bAjouter.UseVisualStyleBackColor = true;
+            bAjouter.Click += bAjouter_Click;
             // 
             // bDenombrer
             // 
@@ -120,6 +121,7 @@
             bDenombrer.TabIndex = 9;
             bDenombrer.Text = "Dénombrer";
             bDenombrer.UseVisualStyleBackColor = true;
+            bDenombrer.Click += bDenombrer_Click;
             // 
             // bConsulter
             // 
@@ -129,6 +131,7 @@
             bConsulter.TabIndex = 8;
             bConsulter.Text = "Consulter";
             bConsulter.UseVisualStyleBackColor = true;
+            bConsulter.Click += bConsulter_Click;
             // 
             // splitContainer1
             // 
@@ -157,6 +160,7 @@
             Name = "FenetreBDD";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Base de données";
+            Load += FenetreBDD_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             splitContainer1.Panel1.ResumeLayout(false);
@@ -172,8 +176,8 @@
         private Panel panel1;
         private Label lPrenom;
         private Label lNom;
-        private TextBox textBox1;
-        private TextBox te;
+        private TextBox tbNom;
+        private TextBox tbPrenom;
         private Button bAjouter;
         private Button bDenombrer;
         private Button bConsulter;
