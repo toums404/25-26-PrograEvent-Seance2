@@ -30,7 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FenetreHistogramme));
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
-            boutonColore1 = new Mes_Controles.BoutonColore();
+            bCreer = new Mes_Controles.BoutonColore();
+            bDessiner = new Mes_Controles.BoutonColore();
+            pDessin = new Panel();
+            lbMonPoint = new ListBox();
             SuspendLayout();
             // 
             // sqlCommand1
@@ -38,35 +41,73 @@
             sqlCommand1.CommandTimeout = 30;
             sqlCommand1.EnableOptimizedParameterBinding = false;
             // 
-            // boutonColore1
+            // bCreer
             // 
-            boutonColore1.CouleurDroite = Color.MediumTurquoise;
-            boutonColore1.CouleurGauche = Color.Crimson;
-            boutonColore1.Location = new Point(191, 104);
-            boutonColore1.Name = "boutonColore1";
-            boutonColore1.Size = new Size(401, 215);
-            boutonColore1.TabIndex = 0;
-            boutonColore1.Text = "boutonColore1";
-            boutonColore1.TransparenceDroite = 128;
-            boutonColore1.TransparenceGauche = 64;
-            boutonColore1.UseVisualStyleBackColor = true;
+            bCreer.CouleurDroite = Color.MediumTurquoise;
+            bCreer.CouleurGauche = Color.Crimson;
+            bCreer.Location = new Point(39, 27);
+            bCreer.Name = "bCreer";
+            bCreer.Size = new Size(223, 39);
+            bCreer.TabIndex = 0;
+            bCreer.Text = "Créer";
+            bCreer.TransparenceDroite = 128;
+            bCreer.TransparenceGauche = 64;
+            bCreer.UseVisualStyleBackColor = true;
+            bCreer.Click += bCreer_Click;
+            // 
+            // bDessiner
+            // 
+            bDessiner.CouleurDroite = Color.Cyan;
+            bDessiner.CouleurGauche = Color.BlueViolet;
+            bDessiner.Location = new Point(533, 27);
+            bDessiner.Name = "bDessiner";
+            bDessiner.Size = new Size(223, 39);
+            bDessiner.TabIndex = 1;
+            bDessiner.Text = "Dessiner";
+            bDessiner.TransparenceDroite = 64;
+            bDessiner.TransparenceGauche = 64;
+            bDessiner.UseVisualStyleBackColor = true;
+            bDessiner.Click += bDessiner_Click;
+            // 
+            // pDessin
+            // 
+            pDessin.Location = new Point(39, 89);
+            pDessin.Name = "pDessin";
+            pDessin.Size = new Size(495, 334);
+            pDessin.TabIndex = 2;
+            // 
+            // lbMonPoint
+            // 
+            lbMonPoint.FormattingEnabled = true;
+            lbMonPoint.ItemHeight = 25;
+            lbMonPoint.Location = new Point(540, 89);
+            lbMonPoint.Name = "lbMonPoint";
+            lbMonPoint.Size = new Size(216, 329);
+            lbMonPoint.TabIndex = 3;
             // 
             // FenetreHistogramme
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(boutonColore1);
+            Controls.Add(lbMonPoint);
+            Controls.Add(pDessin);
+            Controls.Add(bDessiner);
+            Controls.Add(bCreer);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FenetreHistogramme";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Histogramme";
+            Load += FenetreHistogramme_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
-        private Mes_Controles.BoutonColore boutonColore1;
+        private Mes_Controles.BoutonColore bCreer;
+        private Mes_Controles.BoutonColore bDessiner;
+        private Panel pDessin;
+        private ListBox lbMonPoint;
     }
 }
