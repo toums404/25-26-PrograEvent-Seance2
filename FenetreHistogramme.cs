@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static _25_26_PrograEvent_Seance2.MonHistogramme;
 
 namespace _25_26_PrograEvent_Seance2
 {
@@ -59,7 +60,7 @@ namespace _25_26_PrograEvent_Seance2
             alData.Clear();
             lbMonPoint.Items.Clear();
 
-            int nbPoints = rnd.Next(10, 50); // Un nombre aléatoire de points
+            int nbPoints = 15;
             int currentX = 0;
 
             for (int i = 0; i < nbPoints; i++)
@@ -79,21 +80,38 @@ namespace _25_26_PrograEvent_Seance2
 
         private void bDessiner_Click(object sender, EventArgs e)
         {
-            // Déclenche l'événement Paint du Panel
+            // 1. On met à jour le Panel classique (déclenche pDessin_Paint)
             pDessin.Invalidate();
+
+            // 2. On prépare la "copie" des données pour le nouveau contrôle
+            List<HistoPoint> copiePourComposant = new List<HistoPoint>();
+
+            foreach (MonPoint pointOriginal in alData)
+            {
+                // On crée une copie exacte avec le type HistoPoint
+                HistoPoint nouveauPoint = new HistoPoint();
+                nouveauPoint.X = pointOriginal.X;
+                nouveauPoint.Y = pointOriginal.Y;
+
+                copiePourComposant.Add(nouveauPoint);
+            }
+
+            // 3. On envoie cette liste au contrôle utilisateur
+            if (HistoPerso != null)
+            {
+                HistoPerso.SetData(copiePourComposant);
+            }
         }
         private void pDessin_Paint(object sender, PaintEventArgs e)
         {
-            if (alData.Count < 2) return; // Pas assez de points pour dessiner une ligne
+            if (alData.Count < 2) return;
 
             Graphics g = e.Graphics;
-            g.SmoothingMode = SmoothingMode.AntiAlias; // Pour un tracé lissé
+            g.SmoothingMode = SmoothingMode.AntiAlias;
 
             // On cherche les valeurs extrêmes pour adapter le dessin à la taille du Panel
             int minX = alData.First().X;
             int maxX = alData.Last().X;
-
-            // Pour remplir *exactement* le panel, on prend les min/max réels des Y générés
             int minY = alData.Min(p => p.Y);
             int maxY = alData.Max(p => p.Y);
 
@@ -104,25 +122,49 @@ namespace _25_26_PrograEvent_Seance2
             float rectWidth = pDessin.ClientRectangle.Width;
             float rectHeight = pDessin.ClientRectangle.Height;
 
-            // Tableau pour stocker les coordonnées converties pour l'écran
-            PointF[] pointsEcran = new PointF[alData.Count];
+            // 1. Calcul de l'axe Y=0 sur l'écran pour la base des barres
+            float axeZeroEcran = rectHeight - (((float)(0 - minY) / (maxY - minY)) * rectHeight);
 
             for (int i = 0; i < alData.Count; i++)
             {
-                // Mise à l'échelle de X (Produit en croix)
+                // Position X et Y sur l'écran
                 float screenX = ((float)(alData[i].X - minX) / (maxX - minX)) * rectWidth;
-
-                // Mise à l'échelle de Y (Attention, l'axe Y de l'écran va vers le bas !)
-                // On inverse donc la formule pour que les valeurs positives soient en haut
                 float screenY = rectHeight - (((float)(alData[i].Y - minY) / (maxY - minY)) * rectHeight);
 
-                pointsEcran[i] = new PointF(screenX, screenY);
-            }
+                // 2. Calcul de la largeur de la barre (avec l'ajustement pour la dernière)
+                float largeurBarre;
+                if (alData.Count == 1)
+                {
+                    largeurBarre = 20f;
+                }
+                else if (i < alData.Count - 1)
+                {
+                    float nextX = ((float)(alData[i + 1].X - minX) / (maxX - minX)) * rectWidth;
+                    largeurBarre = nextX - screenX;
+                }
+                else
+                {
+                    float prevX = ((float)(alData[i - 1].X - minX) / (maxX - minX)) * rectWidth;
+                    largeurBarre = screenX - prevX;
+                    if (largeurBarre < 5f) largeurBarre = 5f;
+                }
 
-            // Dessin des lignes reliant les points
-            using (Pen stylo = new Pen(Color.Navy, 2f))
-            {
-                g.DrawLines(stylo, pointsEcran);
+                // 3. Calcul de la hauteur et du point de départ Y
+                float topY = Math.Min(screenY, axeZeroEcran);
+                float hauteurBarre = Math.Abs(screenY - axeZeroEcran);
+                if (hauteurBarre < 1f) hauteurBarre = 1f;
+
+                // 4. Dessin du rectangle plein (Couleur au choix, ici Navy)
+                using (SolidBrush pinceau = new SolidBrush(Color.Navy))
+                {
+                    g.FillRectangle(pinceau, screenX, topY, largeurBarre, hauteurBarre);
+                }
+
+                // 5. Bordure noire pour délimiter les barres
+                using (Pen bordure = new Pen(Color.Black, 1f))
+                {
+                    g.DrawRectangle(bordure, screenX, topY, largeurBarre, hauteurBarre);
+                }
             }
         }
     }

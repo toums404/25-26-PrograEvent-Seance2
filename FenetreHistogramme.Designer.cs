@@ -29,17 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FenetreHistogramme));
-            sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             bCreer = new Mes_Controles.BoutonColore();
             bDessiner = new Mes_Controles.BoutonColore();
             pDessin = new Panel();
             lbMonPoint = new ListBox();
+            HistoPerso = new MonHistogramme();
+            label1 = new Label();
             SuspendLayout();
-            // 
-            // sqlCommand1
-            // 
-            sqlCommand1.CommandTimeout = 30;
-            sqlCommand1.EnableOptimizedParameterBinding = false;
             // 
             // bCreer
             // 
@@ -82,14 +78,37 @@
             lbMonPoint.ItemHeight = 25;
             lbMonPoint.Location = new Point(540, 89);
             lbMonPoint.Name = "lbMonPoint";
-            lbMonPoint.Size = new Size(216, 329);
+            lbMonPoint.Size = new Size(216, 129);
             lbMonPoint.TabIndex = 3;
+            // 
+            // HistoPerso
+            // 
+            HistoPerso.Location = new Point(540, 249);
+            HistoPerso.MaxX = 216;
+            HistoPerso.MaxY = 199;
+            HistoPerso.MinX = 0;
+            HistoPerso.MinY = -100;
+            HistoPerso.Name = "HistoPerso";
+            HistoPerso.Size = new Size(216, 174);
+            HistoPerso.TabIndex = 4;
+            HistoPerso.Trait = Color.Red;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(540, 221);
+            label1.Name = "label1";
+            label1.Size = new Size(182, 25);
+            label1.TabIndex = 5;
+            label1.Text = "histogramme perso : ";
             // 
             // FenetreHistogramme
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label1);
+            Controls.Add(HistoPerso);
             Controls.Add(lbMonPoint);
             Controls.Add(pDessin);
             Controls.Add(bDessiner);
@@ -100,14 +119,15 @@
             Text = "Histogramme";
             Load += FenetreHistogramme_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
         private Mes_Controles.BoutonColore bCreer;
         private Mes_Controles.BoutonColore bDessiner;
         private Panel pDessin;
         private ListBox lbMonPoint;
+        private MonHistogramme HistoPerso;
+        private Label label1;
     }
 }
