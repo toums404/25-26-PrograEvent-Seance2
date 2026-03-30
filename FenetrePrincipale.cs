@@ -92,5 +92,11 @@ namespace _25_26_PrograEvent_Seance2
             FenetreBDD fenetreBDD = new FenetreBDD();
             fenetreBDD.ShowDialog();
         }
+
+        private void histogrammeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FenetreHistogramme fenetreHistogramme = new FenetreHistogramme();
+            fenetreHistogramme.ShowDialog();
+        }
     }
 }
