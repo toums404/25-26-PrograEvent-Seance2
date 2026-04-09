@@ -99,6 +99,7 @@
             bPointeurTrigonometrique.TabIndex = 10;
             bPointeurTrigonometrique.Text = "Idem Pointeur";
             bPointeurTrigonometrique.UseVisualStyleBackColor = true;
+            bPointeurTrigonometrique.Click += bPointeurTrigonometrique_Click;
             // 
             // bPointeurPolynome
             // 
@@ -109,6 +110,7 @@
             bPointeurPolynome.TabIndex = 9;
             bPointeurPolynome.Text = "Idem Pointeur";
             bPointeurPolynome.UseVisualStyleBackColor = true;
+            bPointeurPolynome.Click += bPointeurPolynome_Click;
             // 
             // bTrigonometrique
             // 
@@ -119,6 +121,7 @@
             bTrigonometrique.TabIndex = 8;
             bTrigonometrique.Text = "Trigonométrique : sin(x)";
             bTrigonometrique.UseVisualStyleBackColor = true;
+            bTrigonometrique.Click += bTrigonometrique_Click;
             // 
             // bPolynome
             // 
@@ -129,6 +132,7 @@
             bPolynome.TabIndex = 7;
             bPolynome.Text = "Polynôme : x²+2";
             bPolynome.UseVisualStyleBackColor = true;
+            bPolynome.Click += bPolynome_Click;
             // 
             // lbResultats
             // 
@@ -170,7 +174,6 @@
             Name = "FenetreIntegration";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Integration numérique";
-            Load += FenetreIntegration_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
