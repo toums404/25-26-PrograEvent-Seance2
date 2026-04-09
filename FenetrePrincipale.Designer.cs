@@ -47,6 +47,7 @@
             MiMalware = new ToolStripMenuItem();
             MiSpirographe = new ToolStripMenuItem();
             MiHorloge = new ToolStripMenuItem();
+            intégrationToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -97,7 +98,7 @@
             // 
             // MsApplications
             // 
-            MsApplications.DropDownItems.AddRange(new ToolStripItem[] { MiEditeur, clavierEtSourisToolStripMenuItem, explorateurToolStripMenuItem, baseDeDonnéesToolStripMenuItem, histogrammeToolStripMenuItem });
+            MsApplications.DropDownItems.AddRange(new ToolStripItem[] { MiEditeur, clavierEtSourisToolStripMenuItem, explorateurToolStripMenuItem, baseDeDonnéesToolStripMenuItem, histogrammeToolStripMenuItem, intégrationToolStripMenuItem });
             MsApplications.Name = "MsApplications";
             MsApplications.Size = new Size(126, 29);
             MsApplications.Text = "Applications";
@@ -179,6 +180,13 @@
             MiHorloge.Text = "Horloge";
             MiHorloge.Click += MiHorloge_Click;
             // 
+            // intégrationToolStripMenuItem
+            // 
+            intégrationToolStripMenuItem.Name = "intégrationToolStripMenuItem";
+            intégrationToolStripMenuItem.Size = new Size(270, 34);
+            intégrationToolStripMenuItem.Text = "Intégration";
+            intégrationToolStripMenuItem.Click += intégrationToolStripMenuItem_Click;
+            // 
             // FenetrePrincipale
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -217,5 +225,6 @@
         private ToolStripMenuItem explorateurToolStripMenuItem;
         private ToolStripMenuItem baseDeDonnéesToolStripMenuItem;
         private ToolStripMenuItem histogrammeToolStripMenuItem;
+        private ToolStripMenuItem intégrationToolStripMenuItem;
     }
 }

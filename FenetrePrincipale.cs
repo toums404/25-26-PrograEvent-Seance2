@@ -98,5 +98,11 @@ namespace _25_26_PrograEvent_Seance2
             FenetreHistogramme fenetreHistogramme = new FenetreHistogramme();
             fenetreHistogramme.ShowDialog();
         }
+
+        private void intégrationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FenetreIntegration fenetreIntegration = new FenetreIntegration();
+            fenetreIntegration.ShowDialog();
+        }
     }
 }
